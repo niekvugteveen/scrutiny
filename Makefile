@@ -72,6 +72,7 @@ binary-test-coverage: binary-dep
 
 .PHONY: binary-collector
 binary-collector: binary-dep
+	GOMAXPROCS=1 \
 	go build -ldflags "$(LD_FLAGS)" -o $(COLLECTOR_BINARY_NAME) $(STATIC_TAGS) ./collector/cmd/collector-metrics/
 ifneq ($(OS),Windows_NT)
 	chmod +x $(COLLECTOR_BINARY_NAME)
@@ -82,6 +83,7 @@ endif
 
 .PHONY: binary-web
 binary-web: binary-dep
+	GOMAXPROCS=1 \
 	go build -ldflags "$(LD_FLAGS)" -o $(WEB_BINARY_NAME) $(STATIC_TAGS) ./webapp/backend/cmd/scrutiny/
 ifneq ($(OS),Windows_NT)
 	chmod +x $(WEB_BINARY_NAME)
