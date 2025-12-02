@@ -102,14 +102,14 @@ binary-frontend:
 	cd webapp/frontend
 	npm install -g @angular/cli@v13-lts
 	mkdir -p $(CURDIR)/dist
-	npm ci
+	npm ci --legacy-peer-deps
 	npm run build:prod -- --output-path=$(CURDIR)/dist
 
 .PHONY: binary-frontend-test-coverage
 # reduce logging, disable angular-cli analytics for ci environment
 binary-frontend-test-coverage:
 	cd webapp/frontend
-	npm ci
+	npm ci --legacy-peer-deps
 	npx ng test --watch=false --browsers=ChromeHeadless --code-coverage
 
 ########################################################################################################################
