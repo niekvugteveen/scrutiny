@@ -23,7 +23,7 @@
         "@angular/animations": "v13-lts",
         "@angular/cdk": "v21-lts",
         "@angular/common": "v21-lts",
-        "@angular/compiler": "v13-lts",
+        "@angular/compiler": "v19-lts",
         "@angular/core": "v13-lts",
         "@angular/forms": "v21-lts",
         "@angular/material": "v21-lts",
