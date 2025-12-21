@@ -4,7 +4,7 @@
 ########################################################################################################################
 
 ######## Build the frontend
-FROM --platform=${BUILDPLATFORM} node AS frontendbuild
+FROM --platform=${BUILDPLATFORM} node:20-bookworm AS frontendbuild
 WORKDIR /go/src/github.com/analogj/scrutiny
 COPY --link . /go/src/github.com/analogj/scrutiny
 
